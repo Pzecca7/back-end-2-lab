@@ -19,7 +19,7 @@ module.exports = {
         let { type } = req.body
         let index = houseDB.findIndex(house => house.id === +id)
 
-        if(type === 'minus'){
+        if(type === 'minus' && houseDB[index].price > 0){
             houseDB[index].price -= 10000
         } else if(type === 'plus'){
             houseDB[index].price += 10000
